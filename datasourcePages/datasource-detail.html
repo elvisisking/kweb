@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AngularJS Tutorial</title>
+    <link rel="stylesheet" href="../bower_components/angular-patternfly/dist/styles/angular-patternfly.min.css" />
+    <link rel="stylesheet" href="../bower_components/patternfly/dist/css/patternfly.min.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/patternfly/js/patternfly.min.js"></script>
+    <script src="../bower_components/angular-patternfly/dist/angular-patternfly.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home fa-fw" aria-hidden="true"></i><a href="../dashboard.html">Dashboard</a></li>
+            <li><i class="fa fa-cube fa-fw" aria-hidden="true"></i><a href="./datasource-summary.html">DataSources</a></li>
+            <li>MyOracle</li>
+        </ol>
+        <div class="row">
+            <div class="col-sm-8 col-md-9">
+                <div class="page-header page-header-bleed-right">
+                    <h1><span class="label label-success">Active</span>&nbsp;MyOracleDS</h1>
+                        <form class="form-horizontal">
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="textInput">Description</label>
+                            <div class="col-md-6">
+                              <input type="text" id="textInput" class="form-control" contenteditable="true" placeholder="This is an Oracle datasource">
+                            </div>
+                          </div>
+                        </form>
+                        <form class="form-horizontal">
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="boostrapSelect1">Connection</label>
+                            <div class="col-md-10">
+                                <div class="dropdown">
+                                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                    OracleDBConn
+                                    <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">OracleDBConn</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">MongoConn</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SQLServerConn</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">OracleDBConn2</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SFConn</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">WebSvcConn</a></li>
+                                  </ul>
+                                </div>                            
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="boostrapSelect2">Translator</label>
+                            <div class="col-md-10">
+                                <div class="dropdown">
+                                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                    oracle
+                                    <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">access</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">accumulo</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">cassandra</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">db2</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">derby</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">excel</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">file</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">h2</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">oracle</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">sqlserver</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">sybase</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">teiid</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">ws</a></li>
+                                  </ul>
+                                </div>                            
+                            </div>
+                          </div>
+                        </form>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="active"><a data-toggle="tab" href="#schemaDefn">Schema Definition</a></li>
+                </ul>
+			    <div class="tab-content">
+			        <div class="tab-pane fade in active" id="schemaDefn">
+                    <h2>JDBC: Treeview picker <br>Other: Specialized 'Wizard'?</h2>
+                    </div>
+			    </div>  
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a class="btn btn-default" href="./datasource-summary.html">Cancel</a>
+                <div class="pull-right">
+                    <button type="submit" class="btn btn-primary">Test</button>
+                    <button type="submit" class="btn btn-primary">Activate</button>
+                </div>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+
+    <script>
+        function replaceContent(divId, newContent) {
+            var container = document.getElementById(divId);
+            container.innerHTML = newContent;
+        }
+    </script>
+
+</body>
+
+</html>
