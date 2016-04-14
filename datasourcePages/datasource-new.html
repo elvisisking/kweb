@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AngularJS Tutorial</title>
+    <link rel="stylesheet" href="../bower_components/angular-patternfly/dist/styles/angular-patternfly.min.css" />
+    <link rel="stylesheet" href="../bower_components/patternfly/dist/css/patternfly.min.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/patternfly/js/patternfly.min.js"></script>
+    <script src="../bower_components/angular-patternfly/dist/angular-patternfly.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8 col-md-9">                
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3>New DataSource</h3>
+                        <h4>&nbsp;&nbsp;Create a new data source using the specified connection and translator</h4>
+                        <form class="form-horizontal">
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="textInput">Name</label>
+                            <div class="col-md-6">
+                              <input type="text" id="textInput" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="textInput">Description</label>
+                            <div class="col-md-6">
+                              <input type="text" id="textInput" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="boostrapSelect1">Connection</label>
+                            <div class="col-md-10">
+                                <div class="dropdown">
+                                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                    OracleDBConn
+                                    <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">OracleDBConn</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">MongoConn</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SQLServerConn</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">OracleDBConn2</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SFConn</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">WebSvcConn</a></li>
+                                  </ul>
+                                </div>                            
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="boostrapSelect2">Translator</label>
+                            <div class="col-md-10">
+                                <div class="dropdown">
+                                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                    oracle
+                                    <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">access</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">accumulo</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">cassandra</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">db2</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">derby</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">excel</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">file</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">h2</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">oracle</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">sqlserver</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">sybase</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">teiid</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">ws</a></li>
+                                  </ul>
+                                </div>                            
+                            </div>
+                          </div>
+                        </form>
+                        <a class="btn btn-primary" href="./datasource-detail.html">Create DataSource</a>
+                        <a class="btn btn-default" href="./datasource-summary.html">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+
+    <script>
+        function replaceContent(divId, newContent) {
+            var container = document.getElementById(divId);
+            container.innerHTML = newContent;
+        }
+    </script>
+
+</body>
+
+</html>
