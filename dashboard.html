@@ -111,12 +111,12 @@
                         <div id="server-status-card" class="col-xs-12 col-md-6">
                             <div class="card-pf">
                                 <div class="card-pf-heading" style='background-color: #f8f6f5;'>
-                                    <h2 class="card-pf-title">
-                                    <a href="server.html">Server Status</a>
+                                    <h2 class="card-pf-title" data-toggle="tooltip" data-placement="right" title="https://localhost:8080/komodo-rest"><span class="pficon pficon-server"></span>
+                                    <a href="./serverPages/server.html">Server Status</a>
                                 </h2>
                                 </div>
                                 <div class="card-pf-body">
-                                    <span class="label label-pill label-success">Connected</span>
+                                    <span class="label label-pill label-success" data-toggle="tooltip" data-placement="right" title="https://localhost:8080/komodo-rest">Connected</span>
                                     <p>4 hrs 31 minutes 14 seconds</p>
                                     <div class="clearfix"></div>
                                     <ul class="list-group">
@@ -124,13 +124,13 @@
                                             <a href="#"> <span class="fa fa-angle-right"></span> Go offline</a>
                                         </li>
                                         <li class="list-group-item">
-                                            <a href="#"> <span class="fa fa-angle-right"></span> View or edit connection properties</a>
+                                            <a href="./serverPages/server.html#connection-props"> <span class="fa fa-angle-right"></span> View or edit connection properties</a>
                                         </li>
                                         <li class="list-group-item">
-                                            <a href="#"> <span class="fa fa-angle-right"></span> View or edit admin properties</a>
+                                            <a href="./serverPages/server.html#admin-props"> <span class="fa fa-angle-right"></span> View or edit admin properties</a>
                                         </li>
                                         <li class="list-group-item">
-                                            <a href="#"> <span class="fa fa-angle-right"></span> View or edit JDBC properties</a>
+                                            <a href="./serverPages/server.html#jdbc-props"> <span class="fa fa-angle-right"></span> View or edit JDBC properties</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -140,7 +140,7 @@
                         <div id="connections-status-card" class="col-xs-12 col-md-6">
                             <div class="card-pf">
                                 <div class="card-pf-heading" style='background-color: #f8f6f5;'>
-                                    <h2 class="card-pf-title">
+                                    <h2 class="card-pf-title"><span class="pficon pficon-route"></span> 
               <a href="./connectionPages/connection-summary.html">Connections</a> - 25
             </h2>
                                 </div>
@@ -166,7 +166,7 @@
                         <div id="vdbs-status-card" class="col-xs-12 col-md-6">
                             <div class="card-pf">
                                 <div class="card-pf-heading" style='background-color: #f8f6f5;'>
-                                    <h2 class="card-pf-title">
+                                    <h2 class="card-pf-title"><span class="fa fa-database"></span> 
                                     <a href="vdbs.html">VDBs</a> - 40
             </h2>
                                 </div>
@@ -196,7 +196,7 @@
                         <div id="data-sources-status-card" class="col-xs-12 col-md-6">
                             <div class="card-pf">
                                 <div class="card-pf-heading" style='background-color: #f8f6f5;'>
-                                    <h2 class="card-pf-title">
+                                    <h2 class="card-pf-title"><span class="pficon pficon-storage-domain"></span> 
                                     <a href="./datasourcePages/datasource-summary.html">Data Sources</a> - 10
             </h2>
                                 </div>
@@ -234,7 +234,11 @@
                         </div>
                         <div class="panel-body">
                             <div class="label">
-                                <a href="#">Display graphical view of artifacts</a>
+                                <a href="#"><span class="pficon pficon-topology"></span> Display graphical view of artifacts</a>
+                            </div>
+                            <br>
+                            <div class="label">
+                                <a href="#"><span class="pficon pficon-import"></span> Upload validation rules</a>
                             </div>
                         </div>
                     </div>
@@ -244,15 +248,15 @@
                         </div>
                         <div class="panel-body">
                             <div class="label">
-                                <a href="#">Search artifact metadata</a>
+                                <a href="#"><span class="fa fa-search"></span> Search artifact metadata</a>
                             </div>
-                            <p></p>
+                            <br>
                             <div class="label">
-                                <a href="#">Create a report</a>
+                                <a href="#"><span class="fa fa-plus"></span> Create a report</a>
                             </div>
-                            <p></p>
+                            <br>
                             <div class="label">
-                                <a href="#">Run a report</a>
+                                <a href="#"><span class="pficon pficon-repository"></span> Run a report</a>
                             </div>
                         </div>
                     </div>
@@ -262,15 +266,15 @@
                         </div>
                         <div class="panel-body">
                             <div class="label">
-                                <a href="#">Books VDB</a>
+                                <a href="#"><span class="fa fa-database"></span> Books VDB</a>
                             </div>
-                            <p></p>
+                            <br>
                             <div class="label">
-                                <a href="#">OracleDBConn connection</a>
+                                <a href="#"><span class="pficon pficon-route"></span> OracleDBConn connection</a>
                             </div>
-                            <p></p>
+                            <br>
                             <div class="label">
-                                <a href="#">MyMongoDS data source</a>
+                                <a href="#"><span class="pficon pficon-storage-domain"></span> MyMongoDS data source</a>
                             </div>
                         </div>
                     </div>
