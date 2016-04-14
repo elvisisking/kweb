@@ -32,12 +32,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.min.js"></script>
     <script src="./bower_components/patternfly/dist/js/patternfly.min.js"></script>
 </head>
-<div class="toast-pf toast-pf-max-width toast-pf-top-right alert alert-warning alert-dismissable">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-        <span class="pficon pficon-close"></span>
-    </button>
-    <span class="pficon pficon-warning-triangle-o"></span> These examples are included for development testing purposes. For official documentation, see <a href="https://www.patternfly.org" class="alert-link">https://www.patternfly.org</a> and <a href="http://getbootstrap.com" class="alert-link">http://getbootstrap.com</a>.
-</div>
 
 <body>
     <nav class="navbar navbar-default navbar-pf" role="navigation">
@@ -104,375 +98,350 @@
             </ul>
         </div>
     </nav>
-    <div class="container-fluid">
 
-        <!-- Status Cards -->
-        <div class="row">
-            <div class="container-fluid container-cards-pf">
-                <div class="row row-cards-pf">
+    <div id="main-panel" class="container-fluid">
+        <ol class="breadcrumb">
+            <li>Komodo Dashboard <a href="#"><span class="pficon pficon-refresh"></span></a></li>
+        </ol>
 
-                    <!-- Server Status Card -->
-                    <div class="col-xs-12 col-md-4">
-                        <div class="card-pf">
-                            <div class="card-pf-heading">
-                                <h2 class="card-pf-title">
-            Server Status 
+        <div id="main-panel">
+            <div id="status-messages-panel" class="row">
+                <div id="status-cards-panel" class="col-xs-8 col-md-8 container-cards-pf">
+                    <div class="row row-cards-pf">
+                        <div id="server-status-card" class="col-xs-12 col-md-6">
+                            <div class="card-pf">
+                                <div class="card-pf-heading" style='background-color: #f8f6f5;'>
+                                    <h2 class="card-pf-title">
+                                    <a href="server.html">Server Status</a>
                                 </h2>
-                            </div>
-                            <div class="card-pf-body">
-                                <span class="label label-pill label-success">Connected</span>
-                                <p>4 hrs 31 minutes 14 seconds</p>
-                                <p class="card-pf-aggregate-status-notifications">
-                                    <a href="#" class="add" data-toggle="tooltip" data-placement="top" title="Disconnect"><h3>Go offline<span class="fa fa-angle-double-right"></span></h3></a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- VDBs Status Card -->
-                    <div class="col-xs-12 col-md-4">
-                        <div class="card-pf">
-                            <div class="card-pf-heading">
-                                <h2 class="card-pf-title">
-              VDBs - 40
-            </h2>
-                            </div>
-                            <div class="card-pf-body">
-                                <h3>Deployed <span class="label label-pill label-success">24</span></h3>
-                                <h3>New <span class="label label-pill label-info">4</span></h3>
-                                <h3>Modified <span class="label label-pill label-warning">12</span></h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Data Sources Status Card -->
-                    <div class="col-xs-12 col-md-4">
-                        <div class="card-pf">
-                            <div class="card-pf-heading">
-                                <h2 class="card-pf-title">
-              Data Sources - 10
-            </h2>
-                            </div>
-                            <div class="card-pf-body">
-                                <div class="progress-description">
-                                    Deployed
                                 </div>
-                                <div class="progress progress-label-top-right">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="8" aria-valuemin="0" aria-valuemax="10" style="width: 80%;" data-toggle="tooltip" title="8 deployed">
-                                        <span><strong>8 of 10</strong></span>
-                                    </div>
-                                    <div class="progress-bar progress-bar-remaining" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="10" style="width: 20%;" data-toggle="tooltip" title="2 not deployed">
-                                        <span class="sr-only">2 not deployed</span>
-                                    </div>
+                                <div class="card-pf-body">
+                                    <span class="label label-pill label-success">Connected</span>
+                                    <p>4 hrs 31 minutes 14 seconds</p>
+                                    <div class="clearfix"></div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <a href="#"> <span class="fa fa-angle-right"></span> Go offline</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#"> <span class="fa fa-angle-right"></span> View or edit connection properties</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#"> <span class="fa fa-angle-right"></span> View or edit admin properties</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#"> <span class="fa fa-angle-right"></span> View or edit JDBC properties</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="connections-status-card" class="col-xs-12 col-md-6">
+                            <div class="card-pf">
+                                <div class="card-pf-heading" style='background-color: #f8f6f5;'>
+                                    <h2 class="card-pf-title">
+              <a href="./connectionPages/connection-summary.html">Connections</a> - 25
+            </h2>
+                                </div>
+                                <div class="card-pf-body">
+                                    <h3>Active <span class="label label-pill label-success">12</span></h3>
+                                    <h3>Modified <span class="label label-pill label-warning">10</span></h3>
+                                    <h3>New <span class="label label-pill label-info">2</span></h3>
+                                    <div class="clearfix"></div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <a href="./connectionPages/connection-summary.html"> <span class="fa fa-angle-right"></span> View connections summary</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="./connectionPages/connection-new.html"> <span class="fa fa-angle-right"></span> Create a new connection</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="row row-cards-pf">
+                        <div id="vdbs-status-card" class="col-xs-12 col-md-6">
+                            <div class="card-pf">
+                                <div class="card-pf-heading" style='background-color: #f8f6f5;'>
+                                    <h2 class="card-pf-title">
+                                    <a href="vdbs.html">VDBs</a> - 40
+            </h2>
+                                </div>
+                                <div class="card-pf-body">
+                                    <h3>Active <span class="label label-pill label-success">24</span></h3>
+                                    <h3>Modified <span class="label label-pill label-warning">12</span></h3>
+                                    <h3>New <span class="label label-pill label-info">4</span></h3>
+                                    <div class="clearfix"></div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <a href="#"> <span class="fa fa-angle-right"></span> View VDBs summary</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#"> <span class="fa fa-angle-right"></span> Create a new VDB</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#"> <span class="fa fa-angle-right"></span> Import VDB from filesystem</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#"> <span class="fa fa-angle-right"></span> Export VDB to filesystem</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="data-sources-status-card" class="col-xs-12 col-md-6">
+                            <div class="card-pf">
+                                <div class="card-pf-heading" style='background-color: #f8f6f5;'>
+                                    <h2 class="card-pf-title">
+                                    <a href="./datasourcePages/datasource-summary.html">Data Sources</a> - 10
+            </h2>
+                                </div>
+                                <div class="card-pf-body">
+                                    <div class="card-pf-body">
+                                        <h3>Active <span class="label label-pill label-success">8</span></h3>
+                                        <h3>Modified <span class="label label-pill label-warning">1</span></h3>
+                                        <h3>New <span class="label label-pill label-info">1</span></h3>
+                                        <div class="clearfix"></div>
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <a href="./datasourcePages/datasource-summary.html"> <span class="fa fa-angle-right"></span> View data sources summary</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <a href="./datasourcePages/datasource-new.html"> <span class="fa fa-angle-right"></span> Create a new data source</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <a href="#"> <span class="fa fa-angle-right"></span> Import a data source from filesystem</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <a href="#"> <span class="fa fa-angle-right"></span> Export a data source to filesystem</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- /row -->
+
+                <div id="action-side-panel" class="col-sm-4 col-md-4">
+                    <div id="workspace-panel" class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Workspace</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="label">
+                                <a href="#">Display graphical view of artifacts</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="analyze-panel" class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Analyze</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="label">
+                                <a href="#">Search artifact metadata</a>
+                            </div>
+                            <p></p>
+                            <div class="label">
+                                <a href="#">Create a report</a>
+                            </div>
+                            <p></p>
+                            <div class="label">
+                                <a href="#">Run a report</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="recently-viewed-panel" class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Recently Viewed</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="label">
+                                <a href="#">Books VDB</a>
+                            </div>
+                            <p></p>
+                            <div class="label">
+                                <a href="#">OracleDBConn connection</a>
+                            </div>
+                            <p></p>
+                            <div class="label">
+                                <a href="#">MyMongoDS data source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- /container -->
+
+            <div id="messages-panel" class="panel panel-default">
+                <div class="btn-group pull-right">
+                    <a href="#" class="btn btn-default btn-sm"><span class="pficon pficon-refresh"></span></a>
+                    <a href="#" class="btn btn-default btn-sm"><span class="pficon pficon-delete"></span></a>
+                    <a href="#" class="btn btn-default btn-sm"><span class="pficon pficon-export"></span></a>
+                </div>
+                <h4>Messages</h4>
+
+                <div class="panel-body">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Severity</th>
+                                <th>Message</th>
+                                <th>Timestamp <span class="fa fa-angle-up"></span></th>
+                                <th>Category</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="middle"><span class="pficon pficon-error-circle-o"></span></td>
+                                <td>Importing /path/to/vdb.xml failed.</td>
+                                <td>March 03, 2014 19:11:56 AM</td>
+                                <td>Import/Export</td>
+                            </tr>
+                            <tr>
+                                <td align="middle"><span class="pficon pficon-warning-triangle-o"></span></td>
+                                <td>This is just a warning message.</td>
+                                <td>March 03, 2014 19:11:56 AM</td>
+                                <td>Server</td>
+                            </tr>
+                            <tr>
+                                <td align="middle"><span class="pficon pficon-info"></span></td>
+                                <td>Information overload.</td>
+                                <td>March 03, 2014 19:11:56 AM</td>
+                                <td>Persistence</td>
+                            </tr>
+                            <tr>
+                                <td align="middle"><span class="pficon pficon-info"></span></td>
+                                <td>Server successfully started</td>
+                                <td>March 03, 2014 19:11:56 AM</td>
+                                <td>Server</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-8 col-md-9">
-                <div class="page-header page-header-bleed-right">
-                    <div class="actions pull-right">
-                        <a href="#"><span class="pficon pficon-refresh"></span> Refresh Results</a>
-                    </div>
-                    <h1>Dashboard</h1>
-                </div>
+        <script>
+            var c3ChartDefaults = $().c3ChartDefaults();
 
-                <h2 class="h4">Infrastructure Performance</h2>
-                <div id="chart"></div>
-                <hr>
-                <h2 class="h4">Infrastructure Capacity</h2>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div id="chart4"></div>
-                    </div>
-                    <div class="col-sm-6">
-                        <table class="table">
-                            <tr>
-                                <th>Status</th>
-                                <th>Location Data</th>
-                                <th>Hosts</th>
-                            </tr>
-                            <tr>
-                                <td><span class="label label-success">New</span></td>
-                                <td><strong>Fusce leo massa</strong>
-                                    <br>Created March 05, 2014 08:34:36 AM</td>
-                                <td><span class="label label-default">11</span></td>
-                            </tr>
-                            <tr>
-                                <td><span class="label label-success">New</span></td>
-                                <td><strong>Iaculis at dapibus eget</strong>
-                                    <br>Created March 03, 2014 20:32:12 AM</td>
-                                <td><span class="label label-default">9</span></td>
-                            </tr>
-                            <tr>
-                                <td><span class="label label-default">Disabled</span></td>
-                                <td><strong>Dapibus nec metus</strong>
-                                    <br>Created March 03, 2014 19:11:56 AM</td>
-                                <td><span class="label label-default">25</span></td>
-                            </tr>
-                        </table>
-                        <p><a href="#">See more &raquo;</a></p>
-                    </div>
-                </div>
-
-                <!-- Log View -->
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Messages</h3>
-                        <button class="btn btn-small pull-right" type="button">Clear</button>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Severity</th>
-                                    <th>Message</th>
-                                    <th>Timestamp</th>
-                                    <th>Category</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Error</td>
-                                    <td>Importing /path/to/vdb.xml failed.</td>
-                                    <td>March 03, 2014 19:11:56 AM</td>
-                                    <td>Import/Export</td>
-                                </tr>
-                                <tr>
-                                    <td>Warning</td>
-                                    <td>This is just a warning message.</td>
-                                    <td>March 03, 2014 19:11:56 AM</td>
-                                    <td>Server</td>
-                                </tr>
-                                <tr>
-                                    <td>Info</td>
-                                    <td>Information overload.</td>
-                                    <td>March 03, 2014 19:11:56 AM</td>
-                                    <td>Persistence</td>
-                                </tr>
-                                <tr>
-                                    <td>Info</td>
-                                    <td>Server successfully started</td>
-                                    <td>March 03, 2014 19:11:56 AM</td>
-                                    <td>Server</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- /col -->
-            <div class="col-sm-4 col-md-3 sidebar-pf sidebar-pf-right">
-                <div class="list-group">
-                    <div class="list-group-item">
-                        <h3>
-                            <span class="list-group-item-heading">Workspace</span>
-                        </h3>
-                        <div class="list-group">
-                            <div class="list-group-item fa fa-angle-right">
-                                <a href="#">View all Server artifacts</a>
-                            </div>
-                            <div class="list-group-item fa fa-angle-right">
-                                <a href="#">Create schema</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-group-item">
-                        <h3>
-                            <span class="list-group-item-heading">VDBs</span>
-                        </h3>
-                        <div class="list-group">
-                            <div class="list-group-item fa fa-angle-right">
-                                <a href="#">Import VDB from filesystem</a>
-                            </div>
-                            <div class="list-group-item fa fa-angle-right">
-                                <a href="#">Export VDB to filesystem</a>
-                            </div>
-                            <div class="list-group-item fa fa-angle-right">
-                                <a href="#">Edit VDB</a>
-                            </div>
-                            <div class="list-group-item fa fa-angle-right">
-                                <a href="#">Test VDB</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-group-item">
-                        <h3>
-                            <span class="list-group-item-heading">Data Sources</span>
-                        </h3>
-                        <div class="list-group">
-                            <div class="list-group-item fa fa-angle-right">
-                                <a href="#">Import data source from filesystem</a>
-                            </div>
-                            <div class="list-group-item fa fa-angle-right">
-                                <a href="#">Export data source to filesystem</a>
-                            </div>
-                            <div class="list-group-item fa fa-angle-right">
-                                <a href="#">Edit data source</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-group-item">
-                        <h3>
-                            <span class="list-group-item-heading">Server</span>
-                        </h3>
-                        <div class="list-group">
-                            <div class="list-group-item fa fa-angle-right">
-                                <a href="server.html">View server connection properties</a>
-                            </div>
-                            <div class="list-group-item fa fa-angle-right">
-                                <a href="server.html">View server admin properties</a>
-                            </div>
-                            <div class="list-group-item fa fa-angle-right">
-                                <a href="server.html">View server JDBC properties</a>
-                            </div>
-                            <div class="list-group-item fa fa-angle-right">
-                                <a href="server.html">Connect or disconnect the server</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-group-item">
-                        <h3>
-                            <span class="list-group-item-heading">Analyze</span>
-                        </h3>
-                        <div class="list-group">
-                            <div class="list-group-item fa fa-angle-right">
-                                <a href="#">Search server artifacts</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <p><a href="#">See all messages</a></p>
-        </div>
-        <!-- /col -->
-    </div>
-    <!-- /row -->
-    </div>
-    <!-- /container -->
-    <script>
-        var c3ChartDefaults = $().c3ChartDefaults();
-
-        var chart = c3.generate({
-            axis: {
-                x: {
-                    tick: {
-                        format: '%m-%d',
-                        outer: false
-                    },
-                    type: 'timeseries'
-                },
-                y: {
-                    tick: {
-                        format: function (d) {
-                            return d + "%";
+            var chart = c3.generate({
+                axis: {
+                    x: {
+                        tick: {
+                            format: '%m-%d',
+                            outer: false
                         },
-                        outer: false
+                        type: 'timeseries'
+                    },
+                    y: {
+                        tick: {
+                            format: function (d) {
+                                return d + "%";
+                            },
+                            outer: false
+                        }
                     }
-                }
-            },
-            bindto: '#chart',
-            color: c3ChartDefaults.getDefaultColors(),
-            data: {
-                columns: [
+                },
+                bindto: '#chart',
+                color: c3ChartDefaults.getDefaultColors(),
+                data: {
+                    columns: [
             ['x', '2015-04-01', '2015-04-02', '2015-04-03', '2015-04-04', '2015-04-05', '2015-04-06', '2015-04-07'],
             ['data1', 16, 44, 33, 88, 50, 76, 21]
           ],
-                x: 'x'
-            },
-            grid: {
-                y: {
-                    show: true
+                    x: 'x'
+                },
+                grid: {
+                    y: {
+                        show: true
+                    }
+                },
+                legend: {
+                    hide: true
+                },
+                point: {
+                    r: 4
+                },
+                size: {
+                    height: 220
                 }
-            },
-            legend: {
-                hide: true
-            },
-            point: {
-                r: 4
-            },
-            size: {
-                height: 220
-            }
-        });
+            });
 
-        var donutChartConfig = c3ChartDefaults.getDefaultDonutConfig('29,210 Host');
-        donutChartConfig.bindto = '#chart2';
-        donutChartConfig.tooltip = {
-            show: true
-        };
-        donutChartConfig.data = {
-            colors: {
-                Cloud: '#006e9c',
-                Virtual: '#00a8e1',
-                Baremetal: '#969696'
-            },
-            columns: [
+            var donutChartConfig = c3ChartDefaults.getDefaultDonutConfig('29,210 Host');
+            donutChartConfig.bindto = '#chart2';
+            donutChartConfig.tooltip = {
+                show: true
+            };
+            donutChartConfig.data = {
+                colors: {
+                    Cloud: '#006e9c',
+                    Virtual: '#00a8e1',
+                    Baremetal: '#969696'
+                },
+                columns: [
           ['Cloud', 4, 828],
           ['Virtual', 13, 258],
           ['Baremetal', 11, 1124]
         ],
-            type: 'donut',
-            onclick: function (d, i) {
-                console.log("onclick", d, i);
-            },
-            onmouseover: function (d, i) {
-                console.log("onmouseover", d, i);
-            },
-            onmouseout: function (d, i) {
-                console.log("onmouseout", d, i);
-            }
-        };
-        var chart2 = c3.generate(donutChartConfig);
-
-        var chart4 = c3.generate({
-            axis: {
-                rotated: true,
-                x: {
-                    categories: ['Location 1', 'Location 2', 'Location 3', 'Location 4'],
-                    tick: {
-                        outer: false
-                    },
-                    type: 'category'
+                type: 'donut',
+                onclick: function (d, i) {
+                    console.log("onclick", d, i);
                 },
-                y: {
-                    tick: {
-                        format: function (d) {
-                            return d + "%";
-                        },
-                        outer: false
-                    }
+                onmouseover: function (d, i) {
+                    console.log("onmouseover", d, i);
+                },
+                onmouseout: function (d, i) {
+                    console.log("onmouseout", d, i);
                 }
-            },
-            bindto: '#chart4',
-            color: c3ChartDefaults.getDefaultColors(),
-            data: {
-                columns: [
+            };
+            var chart2 = c3.generate(donutChartConfig);
+
+            var chart4 = c3.generate({
+                axis: {
+                    rotated: true,
+                    x: {
+                        categories: ['Location 1', 'Location 2', 'Location 3', 'Location 4'],
+                        tick: {
+                            outer: false
+                        },
+                        type: 'category'
+                    },
+                    y: {
+                        tick: {
+                            format: function (d) {
+                                return d + "%";
+                            },
+                            outer: false
+                        }
+                    }
+                },
+                bindto: '#chart4',
+                color: c3ChartDefaults.getDefaultColors(),
+                data: {
+                    columns: [
             ['Virtual Resources', 25, 35, 18, 78],
             ['Physical Resources', 60, 40, 48, 8]
           ],
-                groups: [
+                    groups: [
             ['Virtual Resources', 'Physical Resources']
           ],
-                type: 'bar'
-            },
-            grid: {
-                y: {
-                    show: true
+                    type: 'bar'
+                },
+                grid: {
+                    y: {
+                        show: true
+                    }
+                },
+                size: {
+                    height: 200
                 }
-            },
-            size: {
-                height: 200
-            }
-        });
-    </script>
+            });
+        </script>
 
 </body>
 
