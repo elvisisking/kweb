@@ -111,28 +111,31 @@
                         <div id="server-status-card" class="col-xs-12 col-md-6">
                             <div class="card-pf">
                                 <div class="card-pf-heading" style='background-color: #f8f6f5;'>
-                                    <h2 class="card-pf-title" data-toggle="tooltip" data-placement="right" title="https://localhost:8080/komodo-rest"><span class="pficon pficon-server"></span>
+                                    <h2 class="card-pf-title"<span class="pficon pficon-server"></span>
                                     <a href="./serverPages/server.html">Server Status</a>
                                 </h2>
                                 </div>
                                 <div class="card-pf-body">
                                     <span class="label label-pill label-success" data-toggle="tooltip" data-placement="right" title="https://localhost:8080/komodo-rest">Connected</span>
                                     <p>4 hrs 31 minutes 14 seconds</p>
-                                    <div class="clearfix"></div>
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <a href="#"> <span class="fa fa-angle-right"></span> Go offline</a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="./serverPages/server.html#connection-props"> <span class="fa fa-angle-right"></span> View or edit connection properties</a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="./serverPages/server.html#admin-props"> <span class="fa fa-angle-right"></span> View or edit admin properties</a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="./serverPages/server.html#jdbc-props"> <span class="fa fa-angle-right"></span> View or edit JDBC properties</a>
-                                        </li>
-                                    </ul>
+                                    <div id="server-status-sub-panel" class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="label">
+                                                <a href="#"> <span class="fa fa-angle-right"></span> Go offline</a>
+                                            </div>
+                                            <br>
+                                            <div class="label">
+                                                <a href="./serverPages/server.html#connection-props"> <span class="pficon pficon-edit"></span> View or edit connection properties</a>
+                                            </div>
+                                            <br>
+                                            <div class="label">
+                                                <a href="./serverPages/server.html#admin-props"> <span class="pficon pficon-edit"></span> View or edit admin properties</a>
+                                            </div>
+                                            <div class="label">
+                                                <a href="./serverPages/server.html#jdbc-props"> <span class="pficon pficon-edit"></span> View or edit JDBC properties</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -143,20 +146,32 @@
                                     <h2 class="card-pf-title"><span class="pficon pficon-route"></span> 
               <a href="./connectionPages/connection-summary.html">Connections</a> - 25
             </h2>
+                                    <h5> <span class="label label-success">Active</span> (12) <span class="label label-warning">Modified</span> (10) <span class="label label-info">New</span> (2)</h5>
                                 </div>
                                 <div class="card-pf-body">
-                                    <h3>Active <span class="label label-pill label-success">12</span></h3>
-                                    <h3>Modified <span class="label label-pill label-warning">10</span></h3>
-                                    <h3>New <span class="label label-pill label-info">2</span></h3>
-                                    <div class="clearfix"></div>
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <a href="./connectionPages/connection-summary.html"> <span class="fa fa-angle-right"></span> View connections summary</a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="./connectionPages/connection-new.html"> <span class="fa fa-angle-right"></span> Create a new connection</a>
-                                        </li>
-                                    </ul>
+                                    <div id="connections-progress" class="progress">
+                                        <div class="progress-bar progress-bar-success" style="width: 48%" data-toggle="tooltip" data-placement="top" title="12 of 25 active">
+                                            <span class="sr-only">48% active</span>48%
+                                        </div>
+                                        <div class="progress-bar progress-bar-warning" style="width: 40%" data-toggle="tooltip" data-placement="top" title="10 of 25 active">
+                                            <span class="sr-only">40% modified</span>40%
+                                        </div>
+                                        <div class="progress-bar progress-bar-info" style="width: 12%" data-toggle="tooltip" data-placement="top" title="3 of 25 active">
+                                            <span class="sr-only">12% new</span>12%
+                                        </div>
+                                    </div>
+
+                                    <div id="connections-status-sub-panel" class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="label">
+                                                <a href="./connectionPages/connection-summary.html"> <span class="pficon pficon-edit"></span> View connections summary</a>
+                                            </div>
+                                            <br>
+                                            <div class="label">
+                                                <a href="./connectionPages/connection-new.html"> <span class="fa fa-plus"></span> Create a new connection</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -169,26 +184,39 @@
                                     <h2 class="card-pf-title"><span class="fa fa-database"></span> 
                                     <a href="vdbs.html">VDBs</a> - 40
             </h2>
+                                    <h5> <span class="label label-success">Active</span> (24) <span class="label label-warning">Modified</span> (12) <span class="label label-info">New</span> (4)</h5>
                                 </div>
                                 <div class="card-pf-body">
-                                    <h3>Active <span class="label label-pill label-success">24</span></h3>
-                                    <h3>Modified <span class="label label-pill label-warning">12</span></h3>
-                                    <h3>New <span class="label label-pill label-info">4</span></h3>
-                                    <div class="clearfix"></div>
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <a href="#"> <span class="fa fa-angle-right"></span> View VDBs summary</a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="#"> <span class="fa fa-angle-right"></span> Create a new VDB</a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="#"> <span class="fa fa-angle-right"></span> Import VDB from filesystem</a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <a href="#"> <span class="fa fa-angle-right"></span> Export VDB to filesystem</a>
-                                        </li>
-                                    </ul>
+                                    <div id="vdbs-progress" class="progress">
+                                        <div class="progress-bar progress-bar-success" style="width: 60%" data-toggle="tooltip" data-placement="top" title="24 of 40 active">
+                                            <span class="sr-only">60% active</span>60%
+                                        </div>
+                                        <div class="progress-bar progress-bar-warning" style="width: 30%" data-toggle="tooltip" data-placement="top" title="12 of 40 active">
+                                            <span class="sr-only">30% modified</span>30%
+                                        </div>
+                                        <div class="progress-bar progress-bar-info" style="width: 10%" data-toggle="tooltip" data-placement="top" title="4 of 40 active">
+                                            <span class="sr-only">10% new</span>10%
+                                        </div>
+                                    </div>
+
+                                    <div id="vdbs-status-sub-panel" class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="label">
+                                                <a href="#"> <span class="pficon pficon-edit"></span> View VDBs summary</a>
+                                            </div>
+                                            <br>
+                                            <div class="label">
+                                                <a href="#"> <span class="fa fa-plus"></span> Create a new VDB</a>
+                                            </div>
+                                            <br>
+                                            <div class="label">
+                                                <a href="#"> <span class="pficon pficon-import"></span> Import VDB from filesystem</a>
+                                            </div>
+                                            <div class="label">
+                                                <a href="#"> <span class="pficon pficon-export"></span> Export VDB to filesystem</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -199,27 +227,40 @@
                                     <h2 class="card-pf-title"><span class="pficon pficon-storage-domain"></span> 
                                     <a href="./datasourcePages/datasource-summary.html">Data Sources</a> - 10
             </h2>
+                                    <h5> <span class="label label-success">Active</span> (8) <span class="label label-warning">Modified</span> (1) <span class="label label-info">New</span> (1)</h5>
                                 </div>
                                 <div class="card-pf-body">
                                     <div class="card-pf-body">
-                                        <h3>Active <span class="label label-pill label-success">8</span></h3>
-                                        <h3>Modified <span class="label label-pill label-warning">1</span></h3>
-                                        <h3>New <span class="label label-pill label-info">1</span></h3>
-                                        <div class="clearfix"></div>
-                                        <ul class="list-group">
-                                            <li class="list-group-item">
-                                                <a href="./datasourcePages/datasource-summary.html"> <span class="fa fa-angle-right"></span> View data sources summary</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="./datasourcePages/datasource-new.html"> <span class="fa fa-angle-right"></span> Create a new data source</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#"> <span class="fa fa-angle-right"></span> Import a data source from filesystem</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#"> <span class="fa fa-angle-right"></span> Export a data source to filesystem</a>
-                                            </li>
-                                        </ul>
+                                        <div id="data-sources-progress" class="progress">
+                                            <div class="progress-bar progress-bar-success" style="width: 80%" data-toggle="tooltip" data-placement="top" title="8 of 10 active">
+                                                <span class="sr-only">80% active</span>80%
+                                            </div>
+                                            <div class="progress-bar progress-bar-warning" style="width: 10%" data-toggle="tooltip" data-placement="top" title="1 of 10 active">
+                                                <span class="sr-only">10% modified</span>10%
+                                            </div>
+                                            <div class="progress-bar progress-bar-info" style="width: 10%" data-toggle="tooltip" data-placement="top" title="1 of 10 active">
+                                                <span class="sr-only">10% new</span>10%
+                                            </div>
+                                        </div>
+
+                                        <div id="datasources-status-sub-panel" class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div class="label">
+                                                    <a href="./datasourcePages/datasource-summary.html"> <span class="pficon pficon-edit"></span> View data sources summary</a>
+                                                </div>
+                                                <br>
+                                                <div class="label">
+                                                    <a href="./datasourcePages/datasource-new.html"> <span class="fa fa-plus"></span> Create a new data source</a>
+                                                </div>
+                                                <br>
+                                                <div class="label">
+                                                    <a href="#"> <span class="pficon pficon-import"></span> Import a data source from filesystem</a>
+                                                </div>
+                                                <div class="label">
+                                                    <a href="#"> <span class="pficon pficon-export"></span> Export a data source to filesystem</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -287,7 +328,7 @@
                     <a href="#" class="btn btn-default btn-sm"><span class="pficon pficon-delete"></span></a>
                     <a href="#" class="btn btn-default btn-sm"><span class="pficon pficon-export"></span></a>
                 </div>
-                <h4>Messages</h4>
+                <h4 style='background-color: #f8f6f5;'>Messages</h4>
 
                 <div class="panel-body">
                     <table class="table table-striped table-bordered">
@@ -330,6 +371,11 @@
             </div>
         </div>
 
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+        </script>
         <script>
             var c3ChartDefaults = $().c3ChartDefaults();
 
