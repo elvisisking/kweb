@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AngularJS Tutorial</title>
+    <link rel="stylesheet" href="../bower_components/angular-patternfly/dist/styles/angular-patternfly.min.css" />
+    <link rel="stylesheet" href="../bower_components/patternfly/dist/css/patternfly.min.css">
+    <link rel="stylesheet" href="../wizardPages/wizard.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/patternfly/js/patternfly.min.js"></script>
+    <script src="../bower_components/angular-patternfly/dist/angular-patternfly.min.js"></script>
+    <script src="../wizardPages/stepWizard.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home fa-fw" aria-hidden="true"></i><a href="../dashboard.html">Dashboard</a></li>
+            <li><i class="fa fa-database fa-fw" aria-hidden="true"></i><a href="./vdb-summary.html">Virtual Databases</a></li>
+            <li>MyVDB</li>
+        </ol>
+        <div class="row">
+            <div class="col-sm-8 col-md-9">
+                <div class="page-header page-header-bleed-right">
+                    <h1><i class="fa fa-database fa-fw" aria-hidden="true"></i>MyVDB&nbsp;&nbsp;<span class="label label-success">Active</span></h1>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="textInput">Description</label>
+                            <div class="col-md-6">
+                              <input type="text" id="textInput" class="form-control" contenteditable="true" placeholder="This is my VDB">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="textInput">Version</label>
+                            <div class="col-md-6">
+                              <input type="text" id="textInput" class="form-control" contenteditable="true" placeholder="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="textInput">Connection Type</label>
+                            <div class="col-md-6">
+                              <input type="text" id="textInput" class="form-control" contenteditable="true" placeholder="BY_VERSION">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <h3>Edit the VDB - click on the image and set the properties</h3>
+                <img src="./VDBEditing.png" style="width:1197px;height:543px;">
+                <br>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a class="btn btn-default" href="./vdb-summary.html">Cancel</a>
+                <div class="pull-right">
+                    <button type="submit" class="btn btn-primary">Test</button>
+                    <button type="submit" class="btn btn-primary">Activate</button>
+                </div>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+
+    <script>
+        function replaceContent(divId, newContent) {
+            var container = document.getElementById(divId);
+            container.innerHTML = newContent;
+        }
+    </script>
+
+</body>
+
+</html>

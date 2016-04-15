@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AngularJS Tutorial</title>
+    <link rel="stylesheet" href="../bower_components/angular-patternfly/dist/styles/angular-patternfly.min.css" />
+    <link rel="stylesheet" href="../bower_components/patternfly/dist/css/patternfly.min.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/patternfly/js/patternfly.min.js"></script>
+    <script src="../bower_components/angular-patternfly/dist/angular-patternfly.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home fa-fw" aria-hidden="true"></i><a href="../dashboard.html">Dashboard</a></li>
+            <li><i class="fa fa-database fa-fw" aria-hidden="true"></i>Virtual Databases</li>
+        </ol>
+        <div class="row">
+            <div class="col-sm-8 col-md-9">                
+                <div>
+                    <div class="col-md-6 actions pull-right">
+                        <a href="#"><span class="fa fa-refresh"></span> Refresh</a>
+                    </div>
+                    <h3><i class="fa fa-database fa-fw" aria-hidden="true"></i>VDBs - 5</h3>
+                    <h4><span class="label label-success">Active</span> (2)&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-warning">Modified</span> (1)&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-info">New</span> (2)</h4>
+                    <p><br></p>
+
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-md-6">
+                              <input type="text" id="textInput" class="form-control" contenteditable="true" placeholder="Filter the table">
+                            </div>
+                        </div>
+                    </form>
+                    <a href="./vdb-new.html"><span class="fa fa-plus"></span> New VDB...</a>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <table class="table">
+                            <tr>
+                                <th>Status</th>
+                                <th>VDB</th>
+                                <th>Datasources</th>
+                                <th>Actions</th>
+                            </tr>
+                            <tr>
+                                <td><span class="label label-success">Active</span></td>
+                                <td><strong><a href="./vdb-detail.html"><i class="fa fa-database fa-fw" aria-hidden="true"></i>MyVDB</a></strong>
+                                    <br>This is my VDB</td>
+                                <td><i class="fa fa-cube fa-fw" aria-hidden="true"></i><strong>WebServiceDS</strong></td>
+                                <td><a href="./vdb-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit VDB"></i></a><a href="./vdb-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone VDB"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete VDB"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="label label-info">New</span></td>
+                                <td><strong><a href="./vdb-detail.html"><i class="fa fa-database fa-fw" aria-hidden="true"></i>OracleVDB</a></strong>
+                                    <br>This VDB transforms the Oracle datasource</td>
+                                <td><i class="fa fa-cube fa-fw" aria-hidden="true"></i><strong>MyOracleDS</strong></td>
+                                <td><a href="./vdb-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit VDB"></i></a><a href="./vdb-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone VDB"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete VDB"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="label label-info">New</span></td>
+                                <td><strong><a href="./vdb-detail.html"><i class="fa fa-database fa-fw" aria-hidden="true"></i>MongoVDB</a></strong>
+                                    <br>This data source shows the Mongo schema that I want</td>
+                                <td><i class="fa fa-cube fa-fw" aria-hidden="true"></i><strong>MyMongoDS</strong></td>
+                                <td><a href="./vdb-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit VDB"></i></a><a href="./vdb-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone VDB"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete VDB"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="label label-success">Active</span></td>
+                                <td><strong><a href="./vdb-detail.html"><i class="fa fa-database fa-fw" aria-hidden="true"></i>MultiSourceVDB</a></strong>
+                                    <br>This connects to a few sources</td>
+                                <td><i class="fa fa-cube fa-fw" aria-hidden="true"></i><strong>MyMongoDS<br><i class="fa fa-cube fa-fw" aria-hidden="true"></i>MyFileDS<br><i class="fa fa-cube fa-fw" aria-hidden="true"></i>WebServiceDS</strong></td>
+                                <td><a href="./vdb-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit VDB"></i></a><a href="./vdb-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone VDB"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete VDB"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="label label-warning">Modified</span></td>
+                                <td><strong><a href="./vdb-detail.html"><i class="fa fa-database fa-fw" aria-hidden="true"></i>JoinVDB</a></strong>
+                                    <br>This VDB does a join of two sources</td>
+                                <td><i class="fa fa-cube fa-fw" aria-hidden="true"></i><strong>MyOracleDS<br><i class="fa fa-cube fa-fw" aria-hidden="true"></i>MyFileDS</strong></td>
+                                <td><a href="./vdb-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit VDB"></i></a><a href="./vdb-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone VDB"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete VDB"></i></a></td>
+                            </tr>
+                        </table>
+                        <p><a href="#">See more &raquo;</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+
+    <script>
+        function replaceContent(divId, newContent) {
+            var container = document.getElementById(divId);
+            container.innerHTML = newContent;
+        }
+    </script>
+
+</body>
+
+</html>

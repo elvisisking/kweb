@@ -16,31 +16,25 @@
     <div class="container-fluid">
         <ol class="breadcrumb">
             <li><i class="fa fa-home fa-fw" aria-hidden="true"></i><a href="../dashboard.html">Dashboard</a></li>
-            <li><i class="fa fa-cogs fa-fw" aria-hidden="true"></i>Connections</li>
+            <li><i class="fa fa-plug fa-fw" aria-hidden="true"></i>Connections</li>
         </ol>
         <div class="row">
             <div class="col-sm-8 col-md-9">                
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h3>Summary</h3>
-                        <a class="btn btn-primary pull-right" href="./connection-new.html">New Connection</a>
-                        <h4>&nbsp;&nbsp;&nbsp;&nbsp;Total Connections:  6</h4>
-                        <h4>&nbsp;&nbsp;&nbsp;&nbsp;Active Connections: 2</h4>
-                    </div>
-                </div>
-
                 <div>
                     <div class="col-md-6 actions pull-right">
                         <a href="#"><span class="fa fa-refresh"></span> Refresh</a>
                     </div>
-                    <h3>Connections</h3>
-                        <form class="form-horizontal">
-                          <div class="form-group">
+                    <h3><i class="fa fa-plug fa-fw" aria-hidden="true"></i>Connections - 6</h3>
+                    <h4><span class="label label-success">Active</span> (2)&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-warning">Modified</span> (2)&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-info">New</span> (2)</h4>
+                    <p><br></p>
+                    <form class="form-horizontal">
+                        <div class="form-group">
                             <div class="col-md-6">
-                              <input type="text" id="textInput" class="form-control">
+                              <input type="text" id="textInput" class="form-control" contenteditable="true" placeholder="Filter the table">
                             </div>
-                          </div>
-                        </form>
+                        </div>
+                    </form>
+                    <a href="./connection-new.html"><span class="fa fa-plus"></span> New Connection...</a>
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
@@ -49,49 +43,49 @@
                                 <th>Status</th>
                                 <th>Connection</th>
                                 <th>Type</th>
-                                <th></th>
+                                <th>Actions</th>
                             </tr>
                             <tr>
                                 <td><span class="label label-success">Active</span></td>
-                                <td><strong><a href="./connection-detail.html">OracleDBConn</a></strong>
+                                <td><strong><a href="./connection-detail.html"><i class="fa fa-plug fa-fw" aria-hidden="true"></i>OracleDBConn</a></strong>
                                     <br>Connection definition for oracle db</td>
-                                <td><strong>OracleDriver</strong></td>
-                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true"></i></a></td>
+                                <td><i class="fa fa-cog fa-fw" aria-hidden="true"></i><strong>OracleDriver</strong></td>
+                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
                             </tr>
                             <tr>
                                 <td><span class="label label-warning">Modified</span></td>
-                                <td><strong><a href="./connection-detail.html">MongoConn</a></strong>
+                                <td><strong><a href="./connection-detail.html"><i class="fa fa-plug fa-fw" aria-hidden="true"></i>MongoConn</a></strong>
                                     <br>Connection definition for Mongo instance</td>
-                                <td><strong>MongoDB</strong></td>
-                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true"></i></a></td>
+                                <td><i class="fa fa-cog fa-fw" aria-hidden="true"></i><strong>MongoDB</strong></td>
+                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
                             </tr>
                             <tr>
-                                <td><span class="label label-default">New</span></td>
-                                <td><strong><a href="./connection-detail.html">SQLServerConn</a></strong>
+                                <td><span class="label label-info">New</span></td>
+                                <td><strong><a href="./connection-detail.html"><i class="fa fa-plug fa-fw" aria-hidden="true"></i>SQLServerConn</a></strong>
                                     <br>Connection definition for SQLServer db</td>
-                                <td><strong>SQLServerDriver</strong></td>
-                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true"></i></a></td>
+                                <td><i class="fa fa-cog fa-fw" aria-hidden="true"></i><strong>SQLServerDriver</strong></td>
+                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
                             </tr>
                             <tr>
-                                <td><span class="label label-default">New</span></td>
-                                <td><strong><a href="./connection-detail.html">FileConn</a></strong>
+                                <td><span class="label label-info">New</span></td>
+                                <td><strong><a href="./connection-detail.html"><i class="fa fa-plug fa-fw" aria-hidden="true"></i>FileConn</a></strong>
                                     <br>Connection definition for a file</td>
-                                <td><strong>file</strong></td>
-                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true"></i></a></td>
+                                <td><i class="fa fa-cog fa-fw" aria-hidden="true"></i><strong>file</strong></td>
+                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
                             </tr>
                             <tr>
                                 <td><span class="label label-success">Active</span></td>
-                                <td><strong><a href="./connection-detail.html">SFConn</a></strong>
+                                <td><strong><a href="./connection-detail.html"><i class="fa fa-plug fa-fw" aria-hidden="true"></i>SFConn</a></strong>
                                     <br>Connection definition for salesforce instance</td>
-                                <td><strong>Salesforce</strong></td>
-                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true"></i></a></td>
+                                <td><i class="fa fa-cog fa-fw" aria-hidden="true"></i><strong>Salesforce</strong></td>
+                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
                             </tr>
                             <tr>
                                 <td><span class="label label-warning">Modified</span></td>
-                                <td><strong><a href="./connection-detail.html">WebSvcConn</a></strong>
+                                <td><strong><a href="./connection-detail.html"><i class="fa fa-plug fa-fw" aria-hidden="true"></i>WebSvcConn</a></strong>
                                     <br>Connection definition for my webservice</td>
-                                <td><strong>WebService</strong></td>
-                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true"></i></a></td>
+                                <td><i class="fa fa-cog fa-fw" aria-hidden="true"></i><strong>WebService</strong></td>
+                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
                             </tr>
                         </table>
                         <p><a href="#">See more &raquo;</a></p>
