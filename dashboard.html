@@ -5,7 +5,7 @@
 <!--<![endif]-->
 
 <head>
-    <title>Komodo - A Data Virtualization Tool</title>
+    <title>Data Virtualization Tool</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +43,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/">
-                <img src="./bower_components/patternfly/dist/img/brand.svg" alt="Komodo Data Virtualization Tool" />
+                <img src="./bower_components/patternfly/dist/img/brand.svg" alt="Data Virtualization Tool" />
             </a>
         </div>
         <div class="collapse navbar-collapse navbar-collapse-1">
@@ -101,7 +101,7 @@
 
     <div id="main-panel" class="container-fluid">
         <ol class="breadcrumb">
-            <li>Komodo Dashboard <a href="#"><span class="pficon pficon-refresh"></span></a></li>
+            <li><i class="fa fa-home fa-fw" aria-hidden="true"></i> Dashboard <a href="#"><span class="pficon pficon-refresh"></span></a></li>
         </ol>
 
         <div id="main-panel">
@@ -170,6 +170,13 @@
                                             <div class="label">
                                                 <a href="./connectionPages/connection-new.html"> <span class="fa fa-plus"></span> Create a new connection</a>
                                             </div>
+                                            <br>
+                                            <div class="label">
+                                                <a href="./connectionPages/connection-import.html"> <span class="pficon pficon-import"></span> Import a connection from filesystem</a>
+                                            </div>
+                                            <div class="label">
+                                                <a href="./connectionPages/connection-export.html"> <span class="pficon pficon-export"></span> Export a connection to filesystem</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -210,10 +217,10 @@
                                             </div>
                                             <br>
                                             <div class="label">
-                                                <a href="#"> <span class="pficon pficon-import"></span> Import VDB from filesystem</a>
+                                                <a href="./vdbPages/vdb-import.html"> <span class="pficon pficon-import"></span> Import VDB from filesystem</a>
                                             </div>
                                             <div class="label">
-                                                <a href="#"> <span class="pficon pficon-export"></span> Export VDB to filesystem</a>
+                                                <a href="./vdbPages/vdb-export.html"> <span class="pficon pficon-export"></span> Export VDB to filesystem</a>
                                             </div>
                                         </div>
                                     </div>
@@ -254,10 +261,10 @@
                                                 </div>
                                                 <br>
                                                 <div class="label">
-                                                    <a href="#"> <span class="pficon pficon-import"></span> Import a data source from filesystem</a>
+                                                    <a href="./datasourcePages/datasource-import.html"> <span class="pficon pficon-import"></span> Import a data source from filesystem</a>
                                                 </div>
                                                 <div class="label">
-                                                    <a href="#"> <span class="pficon pficon-export"></span> Export a data source to filesystem</a>
+                                                    <a href="./datasourcePages/datasource-export.html"> <span class="pficon pficon-export"></span> Export a data source to filesystem</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -289,7 +296,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="label">
-                                <a href="#"><span class="fa fa-search"></span> Search artifact metadata</a>
+                                <a href="./searchPages/search-summary.html"><span class="fa fa-search"></span> Search artifact metadata</a>
                             </div>
                             <br>
                             <div class="label">
@@ -307,15 +314,15 @@
                         </div>
                         <div class="panel-body">
                             <div class="label">
-                                <a href="#"><span class="fa fa-database"></span> Books VDB</a>
+                                <a href="./vdbPages/vdb-detail.html"><span class="fa fa-database"></span> Books VDB</a>
                             </div>
                             <br>
                             <div class="label">
-                                <a href="#"><span class="pficon pficon-route"></span> OracleDBConn connection</a>
+                                <a href="./connectionPages/connection-detail.html"><span class="pficon pficon-route"></span> OracleDBConn connection</a>
                             </div>
                             <br>
                             <div class="label">
-                                <a href="#"><span class="pficon pficon-storage-domain"></span> MyMongoDS data source</a>
+                                <a href="./datasourcePages/datasource-detail.html"><span class="pficon pficon-storage-domain"></span> MyMongoDS data source</a>
                             </div>
                         </div>
                     </div>
