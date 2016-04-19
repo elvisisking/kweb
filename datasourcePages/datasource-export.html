@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Export Datasource</title>
+    <link rel="stylesheet" href="../bower_components/angular-patternfly/dist/styles/angular-patternfly.min.css" />
+    <link rel="stylesheet" href="../bower_components/patternfly/dist/css/patternfly.min.css">
+    <link rel="stylesheet" href="../bower_components/patternfly/dist/css/patternfly-additions.min.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/patternfly/js/patternfly.min.js"></script>
+    <script src="../bower_components/angular-patternfly/dist/angular-patternfly.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8 col-md-9">                
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3><i class="pficon pficon-storage-domain" aria-hidden="true"></i> Export Data Source</h3>
+                        <h4>&nbsp;&nbsp;Export a data source to the filesystem</h4>
+                        <br>
+                        <br>
+                        <h5>Select the data source to export, then click Export DataSource</h5>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="boostrapSelect1">Connection</label>
+                            <div class="col-md-10">
+                                <div class="dropdown">
+                                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                    MyOracleDS
+                                    <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">MyOracleDS</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">MyFileDS</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">MyMongoDS</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">MySalesforceDS</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">WebServiceDS</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SQLServerDS</a></li>
+                                  </ul>
+                                </div>                            
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <a class="btn btn-primary" href="#">Export DataSource</a>
+                        <a class="btn btn-default" href="./datasource-summary.html">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+
+    <script>
+        function replaceContent(divId, newContent) {
+            var container = document.getElementById(divId);
+            container.innerHTML = newContent;
+        }
+    </script>
+
+</body>
+
+</html>

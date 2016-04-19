@@ -3,9 +3,10 @@
 
 <head lang="en">
     <meta charset="UTF-8">
-    <title>AngularJS Tutorial</title>
+    <title>Connection Summary</title>
     <link rel="stylesheet" href="../bower_components/angular-patternfly/dist/styles/angular-patternfly.min.css" />
     <link rel="stylesheet" href="../bower_components/patternfly/dist/css/patternfly.min.css">
+    <link rel="stylesheet" href="../bower_components/patternfly/dist/css/patternfly-additions.min.css">
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../bower_components/patternfly/js/patternfly.min.js"></script>
@@ -15,8 +16,8 @@
 <body>
     <div class="container-fluid">
         <ol class="breadcrumb">
-            <li><i class="fa fa-home fa-fw" aria-hidden="true"></i><a href="../dashboard.html">Dashboard</a></li>
-            <li><i class="fa fa-plug fa-fw" aria-hidden="true"></i>Connections</li>
+            <li><a href="../dashboard.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i> Dashboard</a></li>
+            <li><i class="pficon pficon-route" aria-hidden="true"></i> Connections</li>
         </ol>
         <div class="row">
             <div class="col-sm-8 col-md-9">                
@@ -24,7 +25,7 @@
                     <div class="col-md-6 actions pull-right">
                         <a href="#"><span class="fa fa-refresh"></span> Refresh</a>
                     </div>
-                    <h3><i class="fa fa-plug fa-fw" aria-hidden="true"></i>Connections - 6</h3>
+                    <h3><i class="pficon pficon-route" aria-hidden="true"></i> Connections - 6</h3>
                     <h4><span class="label label-success">Active</span> (2)&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-warning">Modified</span> (2)&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-info">New</span> (2)</h4>
                     <p><br></p>
                     <form class="form-horizontal">
@@ -34,7 +35,8 @@
                             </div>
                         </div>
                     </form>
-                    <a href="./connection-new.html"><span class="fa fa-plus"></span> New Connection...</a>
+                    <a href="./connection-new.html"> <span class="fa fa-plus"></span> Create a new connection</a>&nbsp;&nbsp;
+                    <a href="./connection-import.html"> <span class="pficon pficon-import"></span> Import a connection from filesystem</a>   
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
@@ -47,45 +49,45 @@
                             </tr>
                             <tr>
                                 <td><span class="label label-success">Active</span></td>
-                                <td><strong><a href="./connection-detail.html"><i class="fa fa-plug fa-fw" aria-hidden="true"></i>OracleDBConn</a></strong>
+                                <td><strong><a href="./connection-detail.html"><i class="pficon pficon-route" aria-hidden="true"></i> OracleDBConn</a></strong>
                                     <br>Connection definition for oracle db</td>
                                 <td><i class="fa fa-cog fa-fw" aria-hidden="true"></i><strong>OracleDriver</strong></td>
-                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
+                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
                             </tr>
                             <tr>
                                 <td><span class="label label-warning">Modified</span></td>
-                                <td><strong><a href="./connection-detail.html"><i class="fa fa-plug fa-fw" aria-hidden="true"></i>MongoConn</a></strong>
+                                <td><strong><a href="./connection-detail.html"><i class="pficon pficon-route" aria-hidden="true"></i> MongoConn</a></strong>
                                     <br>Connection definition for Mongo instance</td>
                                 <td><i class="fa fa-cog fa-fw" aria-hidden="true"></i><strong>MongoDB</strong></td>
-                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
+                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
                             </tr>
                             <tr>
                                 <td><span class="label label-info">New</span></td>
-                                <td><strong><a href="./connection-detail.html"><i class="fa fa-plug fa-fw" aria-hidden="true"></i>SQLServerConn</a></strong>
+                                <td><strong><a href="./connection-detail.html"><i class="pficon pficon-route" aria-hidden="true"></i> SQLServerConn</a></strong>
                                     <br>Connection definition for SQLServer db</td>
                                 <td><i class="fa fa-cog fa-fw" aria-hidden="true"></i><strong>SQLServerDriver</strong></td>
-                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
+                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
                             </tr>
                             <tr>
                                 <td><span class="label label-info">New</span></td>
-                                <td><strong><a href="./connection-detail.html"><i class="fa fa-plug fa-fw" aria-hidden="true"></i>FileConn</a></strong>
+                                <td><strong><a href="./connection-detail.html"><i class="pficon pficon-route" aria-hidden="true"></i> FileConn</a></strong>
                                     <br>Connection definition for a file</td>
                                 <td><i class="fa fa-cog fa-fw" aria-hidden="true"></i><strong>file</strong></td>
-                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
+                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
                             </tr>
                             <tr>
                                 <td><span class="label label-success">Active</span></td>
-                                <td><strong><a href="./connection-detail.html"><i class="fa fa-plug fa-fw" aria-hidden="true"></i>SFConn</a></strong>
+                                <td><strong><a href="./connection-detail.html"><i class="pficon pficon-route" aria-hidden="true"></i> SFConn</a></strong>
                                     <br>Connection definition for salesforce instance</td>
                                 <td><i class="fa fa-cog fa-fw" aria-hidden="true"></i><strong>Salesforce</strong></td>
-                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
+                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
                             </tr>
                             <tr>
                                 <td><span class="label label-warning">Modified</span></td>
-                                <td><strong><a href="./connection-detail.html"><i class="fa fa-plug fa-fw" aria-hidden="true"></i>WebSvcConn</a></strong>
+                                <td><strong><a href="./connection-detail.html"><i class="pficon pficon-route" aria-hidden="true"></i> WebSvcConn</a></strong>
                                     <br>Connection definition for my webservice</td>
                                 <td><i class="fa fa-cog fa-fw" aria-hidden="true"></i><strong>WebService</strong></td>
-                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
+                                <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
                             </tr>
                         </table>
                         <p><a href="#">See more &raquo;</a></p>

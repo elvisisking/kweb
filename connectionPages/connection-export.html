@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Export Connection</title>
+    <link rel="stylesheet" href="../bower_components/angular-patternfly/dist/styles/angular-patternfly.min.css" />
+    <link rel="stylesheet" href="../bower_components/patternfly/dist/css/patternfly.min.css">
+    <link rel="stylesheet" href="../bower_components/patternfly/dist/css/patternfly-additions.min.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/patternfly/js/patternfly.min.js"></script>
+    <script src="../bower_components/angular-patternfly/dist/angular-patternfly.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8 col-md-9">                
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3><i class="pficon pficon-route" aria-hidden="true"></i> Export Connection</h3>
+                        <h4>&nbsp;&nbsp;Export a connection from the filesystem</h4>
+                        <br>
+                        <br>
+                        <h5>Select the connection to export, then click Export Connection</h5>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="boostrapSelect1">Connection</label>
+                            <div class="col-md-10">
+                                <div class="dropdown">
+                                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                    OracleDBConn
+                                    <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">OracleDBConn</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">MongoConn</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SQLServerConn</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">OracleDBConn2</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SFConn</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">WebSvcConn</a></li>
+                                  </ul>
+                                </div>                            
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <a class="btn btn-primary" href="#">Export Connection</a>
+                        <a class="btn btn-default" href="./connection-summary.html">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+
+    <script>
+        function replaceContent(divId, newContent) {
+            var container = document.getElementById(divId);
+            container.innerHTML = newContent;
+        }
+    </script>
+
+</body>
+
+</html>
