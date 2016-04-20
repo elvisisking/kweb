@@ -19,96 +19,81 @@
             <li><a href="../dashboard.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i> Dashboard</a></li>
             <li><i class="pficon pficon-storage-domain" aria-hidden="true"></i> Datasources</li>
         </ol>
-        <div class="row">
-            <div class="col-sm-8 col-md-9">                
-                <div>
-                    <div class="col-md-6 actions pull-right">
-                        <a href="#"><span class="fa fa-refresh"></span> Refresh</a>
-                    </div>
-                    
-                    <h3><i class="pficon pficon-storage-domain" aria-hidden="true"></i> Data sources - 6</h3>
-                    <h4><span class="label label-success">Active</span> (2)&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-warning">Modified</span> (2)&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-info">New</span> (2)</h4>
-                    <p><br></p>
 
-                    <form class="form-horizontal">
-                        <div class="form-group">
-                            <div class="col-md-6">
-                              <input type="text" id="textInput" class="form-control" contenteditable="true" placeholder="Filter the table">
-                            </div>
-                        </div>
-                    </form>
-                    <a href="./datasource-new.html"><span class="fa fa-plus"></span> Create a new datasource</a>&nbsp;&nbsp;
-                    <a href="./datasource-import.html"> <span class="pficon pficon-import"></span> Import a datasource from filesystem</a>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <table class="table">
-                            <tr>
-                                <th>Status</th>
-                                <th>Data source</th>
-                                <th>Connection</th>
-                                <th>Actions</th>
-                            </tr>
-                            <tr>
-                                <td><span class="label label-success">Active</span></td>
-                                <td><strong><a href="./datasource-detail.html"><i class="pficon pficon-storage-domain" aria-hidden="true"></i> MyOracleDS</a></strong>
-                                    <br>This is an Oracle datasource</td>
-                                <td><i class="pficon pficon-route" aria-hidden="true"></i><strong> OracleDBConn</strong></td>
-                                <td><a href="./datasource-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit data source"></i></a><a href="./datasource-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone data source"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete data source"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><span class="label label-info">New</span></td>
-                                <td><strong><a href="./file-datasource-detail.html"><i class="pficon pficon-storage-domain" aria-hidden="true"></i> MyFileDS</a></strong>
-                                    <br>This is a File datasource</td>
-                                <td><i class="pficon pficon-route" aria-hidden="true"></i><strong> FileConn</strong></td>
-                                <td><a href="./file-datasource-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit data source"></i></a><a href="./file-datasource-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone data source"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete data source"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><span class="label label-info">New</span></td>
-                                <td><strong><a href="./datasource-detail.html"><i class="pficon pficon-storage-domain" aria-hidden="true"></i> MyMongoDS</a></strong>
-                                    <br>This is a MongoDB datasource</td>
-                                <td><i class="pficon pficon-route" aria-hidden="true"></i><strong> MongoConn</strong></td>
-                                <td><a href="./datasource-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit data source"></i></a><a href="./datasource-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone data source"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete data source"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><span class="label label-warning">Modified</span></td>
-                                <td><strong><a href="./datasource-detail.html"><i class="pficon pficon-storage-domain" aria-hidden="true"></i> MySalesforceDS</a></strong>
-                                    <br>This is a Salesforce datasource</td>
-                                <td><i class="pficon pficon-route" aria-hidden="true"></i><strong> SFConn</strong></td>
-                                <td><a href="./datasource-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit data source"></i></a><a href="./datasource-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone data source"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete data source"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><span class="label label-warning">Modified</span></td>
-                                <td><strong><a href="./datasource-detail.html"><i class="pficon pficon-storage-domain" aria-hidden="true"></i> WebServiceDS</a></strong>
-                                    <br>This is a WebService datasource</td>
-                                <td><i class="pficon pficon-route" aria-hidden="true"></i><strong> WebSvcConn</strong></td>
-                                <td><a href="./datasource-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit data source"></i></a><a href="./datasource-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone data source"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete data source"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><span class="label label-success">Active</span></td>
-                                <td><strong><a href="./datasource-detail.html"><i class="pficon pficon-storage-domain" aria-hidden="true"></i> SQLServerDS</a></strong>
-                                    <br>This is a SQLServer datasource</td>
-                                <td><i class="pficon pficon-route" aria-hidden="true"></i><strong> SQLServerConn</strong></td>
-                                <td><a href="./datasource-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit data source"></i></a><a href="./datasource-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone data source"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete data source"></i></a></td>
-                            </tr>
-                        </table>
-                        <p><a href="#">See more &raquo;</a></p>
-                    </div>
-                </div>
-
+        <div id="connections-summary-heading-row" class="col-md-10 row" style="margin-bottom:30px">
+            <div class="actions pull-right">
+                <a href="#" data-toggle="tooltip" data-placement="right" title="Refresh datasources"><span class="fa fa-refresh"></span> Refresh</a>
+                <a href="./datasource-new.html" data-toggle="tooltip" data-placement="right" title="Create a new datasource"><span class="fa fa-plus"></span> New</a>&nbsp;&nbsp;
+                <a href="./datasource-import.html" data-toggle="tooltip" data-placement="right" title="Import a datasource from filesystem"> <span class="pficon pficon-import"></span> Import</a>
             </div>
+
+            <h3><i class="pficon pficon-storage-domain" aria-hidden="true"></i> Data sources - 6</h3>
+            <h4><span class="label label-success">Active</span> (2)&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-warning">Modified</span> (2)&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-info">New</span> (2)</h4>
         </div>
-        <!-- /row -->
+
+        <div id="connections-summary-filter-row" class="col-md-8 row">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <input type="text" id="textInput" class="form-control" contenteditable="true" placeholder="Filter the table">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div id="connections-summary-table-row" class="col-md-10 row">
+            <table id="connections-summary-table" class="table">
+                <tr>
+                    <th>Status</th>
+                    <th>Data source</th>
+                    <th>Connection</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td><span class="label label-success">Active</span></td>
+                    <td><strong><a href="./datasource-detail.html"><i class="pficon pficon-storage-domain" aria-hidden="true"></i> MyOracleDS</a></strong>
+                        <br>This is an Oracle datasource</td>
+                    <td><i class="pficon pficon-route" aria-hidden="true"></i><strong> OracleDBConn</strong></td>
+                    <td><a href="./datasource-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit data source"></i></a><a href="./datasource-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone data source"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete data source"></i></a></td>
+                </tr>
+                <tr>
+                    <td><span class="label label-info">New</span></td>
+                    <td><strong><a href="./file-datasource-detail.html"><i class="pficon pficon-storage-domain" aria-hidden="true"></i> MyFileDS</a></strong>
+                        <br>This is a File datasource</td>
+                    <td><i class="pficon pficon-route" aria-hidden="true"></i><strong> FileConn</strong></td>
+                    <td><a href="./file-datasource-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit data source"></i></a><a href="./file-datasource-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone data source"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete data source"></i></a></td>
+                </tr>
+                <tr>
+                    <td><span class="label label-info">New</span></td>
+                    <td><strong><a href="./datasource-detail.html"><i class="pficon pficon-storage-domain" aria-hidden="true"></i> MyMongoDS</a></strong>
+                        <br>This is a MongoDB datasource</td>
+                    <td><i class="pficon pficon-route" aria-hidden="true"></i><strong> MongoConn</strong></td>
+                    <td><a href="./datasource-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit data source"></i></a><a href="./datasource-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone data source"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete data source"></i></a></td>
+                </tr>
+                <tr>
+                    <td><span class="label label-warning">Modified</span></td>
+                    <td><strong><a href="./datasource-detail.html"><i class="pficon pficon-storage-domain" aria-hidden="true"></i> MySalesforceDS</a></strong>
+                        <br>This is a Salesforce datasource</td>
+                    <td><i class="pficon pficon-route" aria-hidden="true"></i><strong> SFConn</strong></td>
+                    <td><a href="./datasource-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit data source"></i></a><a href="./datasource-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone data source"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete data source"></i></a></td>
+                </tr>
+                <tr>
+                    <td><span class="label label-warning">Modified</span></td>
+                    <td><strong><a href="./datasource-detail.html"><i class="pficon pficon-storage-domain" aria-hidden="true"></i> WebServiceDS</a></strong>
+                        <br>This is a WebService datasource</td>
+                    <td><i class="pficon pficon-route" aria-hidden="true"></i><strong> WebSvcConn</strong></td>
+                    <td><a href="./datasource-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit data source"></i></a><a href="./datasource-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone data source"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete data source"></i></a></td>
+                </tr>
+                <tr>
+                    <td><span class="label label-success">Active</span></td>
+                    <td><strong><a href="./datasource-detail.html"><i class="pficon pficon-storage-domain" aria-hidden="true"></i> SQLServerDS</a></strong>
+                        <br>This is a SQLServer datasource</td>
+                    <td><i class="pficon pficon-route" aria-hidden="true"></i><strong> SQLServerConn</strong></td>
+                    <td><a href="./datasource-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit data source"></i></a><a href="./datasource-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone data source"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete data source"></i></a></td>
+                </tr>
+            </table>
+        </div>
     </div>
-    <!-- /container -->
-
-    <script>
-        function replaceContent(divId, newContent) {
-            var container = document.getElementById(divId);
-            container.innerHTML = newContent;
-        }
-    </script>
-
 </body>
 
 </html>
