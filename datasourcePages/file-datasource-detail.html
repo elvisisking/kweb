@@ -90,7 +90,7 @@
                     <div class="stepwizard-row setup-panel">
                       <div class="stepwizard-step">
                         <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-                        <p>Choose File Filter</p>
+                        <p>Select File</p>
                       </div>
                       <div class="stepwizard-step">
                         <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
@@ -107,58 +107,81 @@
                     <div class="row setup-content" id="step-1">
                       <div class="col-xs-6">
                         <div class="col-md-12">
-                          <h3>Choose the file filter for MyFileDS</h3>
-                          <h5>&nbsp;On this page, choose the file or file filter.</h5>
+                          <button class="btn btn-default nextBtn pull-right" type="button"><i class="fa fa-chevron-right fa-lg" style="color:blue" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Next"></i></button>
+                          <br>
+                          <h3>Select the file for MyFileDS</h3>
+                          <h5>&nbsp;Specify the location of the file for MyFileDS</h5>
                           <div class="form-group">
-                            <label class="control-label">item 1</label>
-                            <input maxlength="100" class="form-control" placeholder="Enter item 1" type="text">
+                            <label class="control-label">Folder Location</label>
+                            <input maxlength="100" class="form-control" placeholder="/home/me/folder" type="text">
                           </div>
                           <div class="form-group">
-                            <label class="control-label">item 2</label>
-                            <input maxlength="100" class="form-control" placeholder="Enter item 2" type="text">
+                            <label class="control-label">File Filter</label>
+                            <input maxlength="100" class="form-control" placeholder="*.*" type="text">
                           </div>
-                          <div class="form-group">
-                            <label class="control-label">item 3</label>
-                            <textarea class="form-control" placeholder="Enter item 3"></textarea>
-                          </div>
-
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+                            <table id="connections-summary-table" class="table">
+                                <tr>
+                                    <th>Select</th>
+                                    <th>File</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" value=""></td>
+                                    <td><strong>file1.txt</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" value=""></td>
+                                    <td><strong>file2.txt</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" value=""></td>
+                                    <td><strong>anotherFile.txt</strong></td>
+                                </tr>
+                            </table>
                         </div>
                       </div>
                     </div>
                     <div class="row setup-content" id="step-2">
                       <div class="col-xs-6">
                         <div class="col-md-12">
-                          <h3>Preview MyFileDS and choose delimiter</h3>
-                          <h5>&nbsp;On this page, preview the file and select delimiter.</h5>
+                          <button class="btn btn-default prevBtn pull-left" type="button"><i class="fa fa-chevron-left fa-lg" style="color:blue" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Previous"></i></button>
+                          <button class="btn btn-default nextBtn pull-right" type="button"><i class="fa fa-chevron-right fa-lg" style="color:blue" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Next"></i></button>
+                          <br>
+                          <h3>Preview MyFileDS</h3>
+                          <h5>&nbsp;Preview the file and select delimiter.</h5>
                           <div class="form-group">
-                            <label class="control-label">item 1</label>
-                            <input maxlength="200" class="form-control" placeholder="Enter Item 1" type="text">
+                            <label class="control-label">File</label>
+                            <input maxlength="200" class="form-control" placeholder="file1.txt" type="text">
                           </div>
                           <div class="form-group">
-                            <label class="control-label">item 2</label>
-                            <input maxlength="200" class="form-control" placeholder="Enter Item 2" type="text">
+                            <label class="control-label">Column Format</label>
+                            <input maxlength="200" class="form-control" placeholder="Fixed Width or Delimited" type="text">
                           </div>
-                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Previous</button>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+                          <div class="form-group">
+                            <label class="control-label">File Preview</label>
+                            <textarea class="form-control" placeholder="Header1, Header2<br>data1, data1<br>data2, data2"></textarea>
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div class="row setup-content" id="step-3">
                       <div class="col-xs-6">
                         <div class="col-md-12">
-                          <h3>Choose formats for MyFileDS</h3>
-                          <h5>&nbsp;On this page, choose the file formats and columns to include.</h5>
+                          <button class="btn btn-default prevBtn pull-left" type="button"><i class="fa fa-chevron-left fa-lg" style="color:blue" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Previous"></i></button>
+                          <br>
+                          <h3>Specify format for MyFileDS</h3>
+                          <h5>&nbsp;Specify header detail and column ordering.</h5>
                           <div class="form-group">
-                            <label class="control-label">item 1</label>
-                            <input maxlength="200" class="form-control" placeholder="Enter Item 1" type="text">
+                            <label class="control-label">File</label>
+                            <input maxlength="200" class="form-control" placeholder="file1.txt" type="text">
                           </div>
                           <div class="form-group">
-                            <label class="control-label">item 2</label>
-                            <input maxlength="200" class="form-control" placeholder="Enter Item 2" type="text">
+                            <label class="control-label">Header Detail</label>
+                            <input maxlength="200" class="form-control" placeholder="Header detail section" type="text">
                           </div>
-                          <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Previous</button>
-                          <button class="btn btn-success btn-lg pull-right" type="submit">Submit</button>
+                          <div class="form-group">
+                            <label class="control-label">Column Order</label>
+                            <input maxlength="200" class="form-control" placeholder="Column ordering section" type="text">
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -167,11 +190,13 @@
                 </div>
                 <!-- END WIZARD PAGES -->
                 
-                <button type="submit" class="btn btn-primary">Save</button>
-                <a class="btn btn-default" href="./datasource-summary.html">Cancel</a>
-                <div class="pull-right">
-                    <button type="submit" class="btn btn-primary">Test</button>
-                    <button type="submit" class="btn btn-primary">Activate</button>
+                <div class="col-xs-6">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a class="btn btn-default" href="./datasource-summary.html">Cancel</a>
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-primary">Test</button>
+                        <button type="submit" class="btn btn-primary">Activate</button>
+                    </div>
                 </div>
             </div>
         </div>

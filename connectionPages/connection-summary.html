@@ -61,12 +61,30 @@
                     <td><strong><a href="./connection-detail.html"><i class="pficon pficon-route" aria-hidden="true"></i> {{conn.name}}</a></strong>
                         <br>{{conn.description}}</td>
                     <td><i class="fa fa-cog fa-fw" aria-hidden="true"></i><strong>{{conn.type}}</strong></td>
-                    <td><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
+                    <td><a data-toggle="modal" data-target="#myModal"><i class="fa fa-play fa-fw" style="color:green" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Test connection"></i></a><a href="./connection-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit connection"></i></a><a href="./connection-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone connection"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete connection"></i></a></td>
                 </tr>
             </table>
         </div>
     </div>
-
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <span class="pficon pficon-close"></span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Connection Test</h4>
+          </div>
+          <div class="modal-body">
+              <span class="label label-success">Active</span>
+              <h5>The connection source is reachable!</h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 
 </html>
