@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Test Datasource</title>
+    <link rel="stylesheet" href="../bower_components/angular-patternfly/dist/styles/angular-patternfly.min.css" />
+    <link rel="stylesheet" href="../bower_components/patternfly/dist/css/patternfly.min.css">
+    <link rel="stylesheet" href="../bower_components/patternfly/dist/css/patternfly-additions.min.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/patternfly/js/patternfly.min.js"></script>
+    <script src="../bower_components/angular-patternfly/dist/angular-patternfly.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <ol class="breadcrumb">
+            <li><a href="../dashboard.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i> Dashboard</a></li>
+            <li><a href="vdb-summary.html"><i class="fa fa-database" aria-hidden="true"></i> VDBs</a></li>
+            <li> Test VDB</li>
+       </ol>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3> Test VDB</h3>
+                <h4>&nbsp;&nbsp;Run a test query against the VDB to see sample data</h4>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Query</label>
+                        <div class="col-md-6">
+                            <textarea class="form-control" placeholder="SELECT Column1 FROM aTable LIMIT 10"></textarea>
+                        </div>
+                    </div>
+                <a href="#"><i class="fa fa-play fa-2x" style="color:green" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Run Test Query"></i></a>
+                &nbsp;&nbsp;<a class="btn btn-default" href="#">Cancel</a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <h4>Results Table</h4>
+        <div id="connections-summary-table-row" class="col-md-10 row">
+            <table id="connections-summary-table" class="table">
+                <tr>
+                    <th>Col1</th>
+                    <th>Col2</th>
+                    <th>Col3</th>
+                </tr>
+                <tr>
+                    <td>Col1 Data</td>
+                    <td>Col2 Data</td>
+                    <td>Col3 Data</td>
+                </tr>
+                <tr>
+                    <td>Col1 Data</td>
+                    <td>Col2 Data</td>
+                    <td>Col3 Data</td>
+                </tr>
+                <tr>
+                    <td>Col1 Data</td>
+                    <td>Col2 Data</td>
+                    <td>Col3 Data</td>
+                </tr>
+                <tr>
+                    <td>Col1 Data</td>
+                    <td>Col2 Data</td>
+                    <td>Col3 Data</td>
+                </tr>
+                <tr>
+                    <td>Col1 Data</td>
+                    <td>Col2 Data</td>
+                    <td>Col3 Data</td>
+                </tr>
+                <tr>
+                    <td>Col1 Data</td>
+                    <td>Col2 Data</td>
+                    <td>Col3 Data</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
