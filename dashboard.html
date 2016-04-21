@@ -31,9 +31,17 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.min.js"></script>
     <script src="./bower_components/patternfly/dist/js/patternfly.min.js"></script>
+    <script src="./bower_components/angular/angular.min.js"></script>
+
+    <!-- controllers -->
+    <script src="app.js"></script>
+    <script src="serverController.js"></script>
+    <script src="connectionController.js"></script>
+    <script src="vdbController.js"></script>
+    <script src="datasourceController.js"></script>
 </head>
 
-<body>
+<body ng-app="kweb">
     <nav class="navbar navbar-default navbar-pf" role="navigation">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
@@ -108,7 +116,7 @@
             <div id="status-messages-panel" class="row">
                 <div id="status-cards-panel" class="col-xs-8 col-md-8 container-cards-pf">
                     <div class="row row-cards-pf">
-                        <div id="server-status-card" class="col-xs-12 col-md-6">
+                        <div ng-controller="ServerController" id="server-status-card" class="col-xs-12 col-md-6">
                             <div class="card-pf">
                                 <div class="card-pf-heading" style='background-color: #f8f6f5;'>
                                     <h2 class="card-pf-title"> <span class="pficon pficon-server"></span>
@@ -116,12 +124,12 @@
                                 </h2>
                                 </div>
                                 <div class="card-pf-body">
-                                    <span class="label label-pill label-success" data-toggle="tooltip" data-placement="right" title="https://localhost:8080/komodo-rest">Connected</span>
-                                    <p>4 hrs 31 minutes 14 seconds</p>
+                                    <span class="label label-pill label-success" data-toggle="tooltip" data-placement="right" title="https://localhost:8080/komodo-rest">{{m_serverStatus}}</span>
+                                    <p>{{m_upTime}}</p>
                                     <div id="server-status-sub-panel" class="panel panel-default">
                                         <div class="panel-body">
                                             <div class="label">
-                                                <a href="#"> <span class="fa fa-angle-right"></span> Go offline</a>
+                                                <a href="#"> <span class="fa fa-angle-right"></span> {{m_connectAction}}</a>
                                             </div>
                                             <br>
                                             <div class="label">
@@ -138,23 +146,23 @@
                         </div>
 
                         <div id="connections-status-card" class="col-xs-12 col-md-6">
-                            <div class="card-pf">
+                            <div ng-controller="ConnectionController" class="card-pf">
                                 <div class="card-pf-heading" style='background-color: #f8f6f5;'>
                                     <h2 class="card-pf-title"><span class="pficon pficon-route"></span> 
-              <a href="./connectionPages/connection-summary.html">Connections</a> - 25
+              <a href="./connectionPages/connection-summary.html">Connections</a> - {{m_numConnections}}
             </h2>
-                                    <h5> <span class="label label-success">Active</span> (12) <span class="label label-warning">Modified</span> (10) <span class="label label-info">New</span> (2)</h5>
+                                    <h5> <span class="label label-success">Active</span> ({{m_numConnectionsActive}}) <span class="label label-warning">Modified</span> ({{m_numConnectionsModified}}) <span class="label label-info">New</span> ({{m_numConnectionsNew}})</h5>
                                 </div>
                                 <div class="card-pf-body">
                                     <div id="connections-progress" class="progress">
-                                        <div class="progress-bar progress-bar-success" style="width: 48%" data-toggle="tooltip" data-placement="top" title="12 of 25 active">
-                                            <span class="sr-only">48% active</span>48%
+                                        <div class="progress-bar progress-bar-success" style="width: {{m_percentage(m_numConnectionsActive, m_numConnections)}}" data-toggle="tooltip" data-placement="top" title="{{m_numConnectionsActive}} of {{m_numConnections}} active">
+                                            <span class="sr-only">{{m_percentage(m_numConnectionsActive, m_numConnections)}} active</span>{{m_percentage(m_numConnectionsActive, m_numConnections)}}
                                         </div>
-                                        <div class="progress-bar progress-bar-warning" style="width: 40%" data-toggle="tooltip" data-placement="top" title="10 of 25 active">
-                                            <span class="sr-only">40% modified</span>40%
+                                        <div class="progress-bar progress-bar-warning" style="width: {{m_percentage(m_numConnectionsModified, m_numConnections)}}" data-toggle="tooltip" data-placement="top" title="{{m_numConnectionsModified}} of {{m_numConnections}} modified">
+                                            <span class="sr-only">{{m_percentage(m_numConnectionsModified, m_numConnections)}} modified</span>{{m_percentage(m_numConnectionsModified, m_numConnections)}}
                                         </div>
-                                        <div class="progress-bar progress-bar-info" style="width: 12%" data-toggle="tooltip" data-placement="top" title="3 of 25 active">
-                                            <span class="sr-only">12% new</span>12%
+                                        <div class="progress-bar progress-bar-info" style="width: {{m_percentage(m_numConnectionsNew, m_numConnections)}}" data-toggle="tooltip" data-placement="top" title="{{m_numConnectionsNew}} of {{m_numConnections}} new">
+                                            <span class="sr-only">{{m_percentage(m_numConnectionsNew, m_numConnections)}} new</span>{{m_percentage(m_numConnectionsNew, m_numConnections)}}
                                         </div>
                                     </div>
 
@@ -171,6 +179,7 @@
                                             <div class="label">
                                                 <a href="./connectionPages/connection-import.html"> <span class="pficon pficon-import"></span> Import a connection from filesystem</a>
                                             </div>
+                                            <br>
                                             <div class="label">
                                                 <a href="./connectionPages/connection-export.html"> <span class="pficon pficon-export"></span> Export a connection to filesystem</a>
                                             </div>
@@ -183,23 +192,23 @@
 
                     <div class="row row-cards-pf">
                         <div id="vdbs-status-card" class="col-xs-12 col-md-6">
-                            <div class="card-pf">
+                            <div ng-controller="VdbController" class="card-pf">
                                 <div class="card-pf-heading" style='background-color: #f8f6f5;'>
                                     <h2 class="card-pf-title"><span class="fa fa-database"></span> 
-                                    <a href="./vdbPages/vdb-summary.html">VDBs</a> - 40
+                                    <a href="./vdbPages/vdb-summary.html">VDBs</a> - {{m_numVdbs}}
             </h2>
-                                    <h5> <span class="label label-success">Active</span> (24) <span class="label label-warning">Modified</span> (12) <span class="label label-info">New</span> (4)</h5>
+                                    <h5> <span class="label label-success">Active</span> ({{m_numVdbsActive}}) <span class="label label-warning">Modified</span> ({{m_numVdbsModified}}) <span class="label label-info">New</span> ({{m_numVdbsNew}})</h5>
                                 </div>
                                 <div class="card-pf-body">
                                     <div id="vdbs-progress" class="progress">
-                                        <div class="progress-bar progress-bar-success" style="width: 60%" data-toggle="tooltip" data-placement="top" title="24 of 40 active">
-                                            <span class="sr-only">60% active</span>60%
+                                        <div class="progress-bar progress-bar-success" style="width: {{m_percentage(m_numVdbsActive, m_numVdbs)}}" data-toggle="tooltip" data-placement="top" title="{{m_numVdbsActive}} of {{m_numVdbs}} active">
+                                            <span class="sr-only">{{m_percentage(m_numVdbsActive, m_numVdbs)}} active</span>{{m_percentage(m_numVdbsActive, m_numVdbs)}}
                                         </div>
-                                        <div class="progress-bar progress-bar-warning" style="width: 30%" data-toggle="tooltip" data-placement="top" title="12 of 40 active">
-                                            <span class="sr-only">30% modified</span>30%
+                                        <div class="progress-bar progress-bar-warning" style="width: {{m_percentage(m_numVdbsModified, m_numVdbs)}}" data-toggle="tooltip" data-placement="top" title="{{m_numVdbsModified}} of {{m_numVdbs}} modified">
+                                            <span class="sr-only">{{m_percentage(m_numVdbsModified, m_numVdbs)}} modified</span>{{m_percentage(m_numVdbsModified, m_numVdbs)}}
                                         </div>
-                                        <div class="progress-bar progress-bar-info" style="width: 10%" data-toggle="tooltip" data-placement="top" title="4 of 40 active">
-                                            <span class="sr-only">10% new</span>10%
+                                        <div class="progress-bar progress-bar-info" style="width: {{m_percentage(m_numVdbsNew, m_numVdbs)}}" data-toggle="tooltip" data-placement="top" title="{{m_numVdbsNew}} of {{m_numVdbs}} new">
+                                            <span class="sr-only">{{m_percentage(m_numVdbsNew, m_numVdbs)}} new</span>{{m_percentage(m_numVdbsNew, m_numVdbs)}}
                                         </div>
                                     </div>
 
@@ -226,24 +235,24 @@
                         </div>
 
                         <div id="data-sources-status-card" class="col-xs-12 col-md-6">
-                            <div class="card-pf">
+                            <div ng-controller="DatasourceController" class="card-pf">
                                 <div class="card-pf-heading" style='background-color: #f8f6f5;'>
                                     <h2 class="card-pf-title"><span class="pficon pficon-storage-domain"></span> 
-                                    <a href="./datasourcePages/datasource-summary.html">Data Sources</a> - 10
+                                    <a href="./datasourcePages/datasource-summary.html">Data Sources</a> - {{m_numDatasources}}
             </h2>
-                                    <h5> <span class="label label-success">Active</span> (8) <span class="label label-warning">Modified</span> (1) <span class="label label-info">New</span> (1)</h5>
+                                    <h5> <span class="label label-success">Active</span> ({{m_numDatasourcesActive}}) <span class="label label-warning">Modified</span> ({{m_numDatasourcesModified}}) <span class="label label-info">New</span> ({{m_numDatasourcesNew}})</h5>
                                 </div>
                                 <div class="card-pf-body">
                                     <div class="card-pf-body">
                                         <div id="data-sources-progress" class="progress">
-                                            <div class="progress-bar progress-bar-success" style="width: 80%" data-toggle="tooltip" data-placement="top" title="8 of 10 active">
-                                                <span class="sr-only">80% active</span>80%
+                                            <div class="progress-bar progress-bar-success" style="width: {{m_percentage(m_numDatasourcesActive, m_numDatasources)}}" data-toggle="tooltip" data-placement="top" title="{{m_numDatasourcesActive}} of {{m_numDatasources}} active">
+                                                <span class="sr-only">{{m_percentage(m_numDatasourcesActive, m_numDatasources)}} active</span>{{m_percentage(m_numDatasourcesActive, m_numDatasources)}}
                                             </div>
-                                            <div class="progress-bar progress-bar-warning" style="width: 10%" data-toggle="tooltip" data-placement="top" title="1 of 10 active">
-                                                <span class="sr-only">10% modified</span>10%
+                                            <div class="progress-bar progress-bar-warning" style="width: {{m_percentage(m_numDatasourcesModified, m_numDatasources)}}" data-toggle="tooltip" data-placement="top" title="{{m_numDatasourcesModified}} of {{m_numDatasources}} modified">
+                                                <span class="sr-only">{{m_percentage(m_numDatasourcesModified, m_numDatasources)}} modified</span>{{m_percentage(m_numDatasourcesModified, m_numDatasources)}}
                                             </div>
-                                            <div class="progress-bar progress-bar-info" style="width: 10%" data-toggle="tooltip" data-placement="top" title="1 of 10 active">
-                                                <span class="sr-only">10% new</span>10%
+                                            <div class="progress-bar progress-bar-info" style="width: {{m_percentage(m_numDatasourcesNew, m_numDatasources)}}" data-toggle="tooltip" data-placement="top" title="{{m_numDatasourcesNew}} of {{m_numDatasources}} new">
+                                                <span class="sr-only">{{m_percentage(m_numDatasourcesNew, m_numDatasources)}} new</span>{{m_percentage(m_numDatasourcesNew, m_numDatasources)}}
                                             </div>
                                         </div>
 
@@ -339,7 +348,7 @@
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>Severity</th>
+                                <th style="text-align: center">Severity</th>
                                 <th>Message</th>
                                 <th>Timestamp <span class="fa fa-angle-up"></span></th>
                                 <th>Category</th>

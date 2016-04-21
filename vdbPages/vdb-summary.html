@@ -11,9 +11,20 @@
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../bower_components/patternfly/js/patternfly.min.js"></script>
     <script src="../bower_components/angular-patternfly/dist/angular-patternfly.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+
+    <script>
+        function toHtml(datasources) {
+            document.write("blah");
+        }
+    </script>
+
+    <!-- controllers -->
+    <script src="../app.js"></script>
+    <script src="../vdbController.js"></script>
 </head>
 
-<body>
+<body ng-app="kweb" ng-controller="VdbController">
     <div class="container-fluid">
         <ol class="breadcrumb">
             <li><a href="../dashboard.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i> Dashboard</a></li>
@@ -22,13 +33,13 @@
 
         <div id="vdbs-summary-heading-row" class="col-md-10 row" style="margin-bottom:30px">
             <div class="col-md-6 actions pull-right">
-                <a href="#" data-toggle="tooltip" data-placement="right" title="Refresh VDBs"><span class="fa fa-refresh"></span> Refresh</a>
-                <a href="./vdb-new.html" data-toggle="tooltip" data-placement="right" title="Create a new VDB"><span class="fa fa-plus"></span> New</a>
+                <a href="#" data-toggle="tooltip" data-placement="right" title="Refresh VDBs"><span class="fa fa-refresh"></span> Refresh</a>&nbsp;&nbsp;
+                <a href="./vdb-new.html" data-toggle="tooltip" data-placement="right" title="Create a new VDB"><span class="fa fa-plus"></span> New</a>&nbsp;&nbsp;
                 <a href="./vdb-import.html" data-toggle="tooltip" data-placement="right" title="Import a VDB from filesystem"> <span class="pficon pficon-import"></span> Import</a>
             </div>
 
-            <h3><i class="fa fa-database fa-fw" aria-hidden="true"></i>VDBs - 5</h3>
-            <h4><span class="label label-success">Active</span> (2)&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-warning">Modified</span> (1)&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-info">New</span> (2)</h4>
+            <h3><i class="fa fa-database fa-fw" aria-hidden="true"></i>VDBs - {{m_numVdbs}}</h3>
+            <h4><span class="label label-success">Active</span> ({{m_numVdbsActive}})&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-warning">Modified</span> ({{m_numVdbsModified}})&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-info">New</span> ({{m_numVdbsNew}})</h4>
         </div>
 
         <div id="vdbs-summary-filter-row" class="col-md-8 row">
@@ -43,45 +54,20 @@
 
         <div id="vdbs-summary-table-row" class="col-md-10 row">
             <table class="table">
+                <thead>
+                    <tr>
+                        <th style="text-align: center">Status</th>
+                        <th>VDB</th>
+                        <th>Datasources</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
                 <tr>
-                    <th>Status</th>
-                    <th>VDB</th>
-                    <th>Datasources</th>
-                    <th>Actions</th>
-                </tr>
-                <tr>
-                    <td><span class="label label-success">Active</span></td>
-                    <td><strong><a href="./vdb-detail.html"><i class="fa fa-database fa-fw" aria-hidden="true"></i> MyVDB</a></strong>
-                        <br>This is my VDB</td>
-                    <td><i class="pficon pficon-storage-domain" aria-hidden="true"></i><strong> WebServiceDS</strong></td>
-                    <td><a href="./vdb-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit VDB"></i></a><a href="./vdb-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone VDB"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete VDB"></i></a></td>
-                </tr>
-                <tr>
-                    <td><span class="label label-info">New</span></td>
-                    <td><strong><a href="./vdb-detail.html"><i class="fa fa-database fa-fw" aria-hidden="true"></i> OracleVDB</a></strong>
-                        <br>This VDB transforms the Oracle datasource</td>
-                    <td><i class="pficon pficon-storage-domain" aria-hidden="true"></i><strong> MyOracleDS</strong></td>
-                    <td><a href="./vdb-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit VDB"></i></a><a href="./vdb-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone VDB"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete VDB"></i></a></td>
-                </tr>
-                <tr>
-                    <td><span class="label label-info">New</span></td>
-                    <td><strong><a href="./vdb-detail.html"><i class="fa fa-database fa-fw" aria-hidden="true"></i> MongoVDB</a></strong>
-                        <br>This data source shows the Mongo schema that I want</td>
-                    <td><i class="pficon pficon-storage-domain" aria-hidden="true"></i><strong> MyMongoDS</strong></td>
-                    <td><a href="./vdb-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit VDB"></i></a><a href="./vdb-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone VDB"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete VDB"></i></a></td>
-                </tr>
-                <tr>
-                    <td><span class="label label-success">Active</span></td>
-                    <td><strong><a href="./vdb-detail.html"><i class="fa fa-database fa-fw" aria-hidden="true"></i> MultiSourceVDB</a></strong>
-                        <br>This connects to a few sources</td>
-                    <td><i class="pficon pficon-storage-domain" aria-hidden="true"></i><strong> MyMongoDS<br><i class="pficon pficon-storage-domain" aria-hidden="true"></i> MyFileDS<br><i class="pficon pficon-storage-domain" aria-hidden="true"></i> WebServiceDS</strong></td>
-                    <td><a href="./vdb-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit VDB"></i></a><a href="./vdb-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone VDB"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete VDB"></i></a></td>
-                </tr>
-                <tr>
-                    <td><span class="label label-warning">Modified</span></td>
-                    <td><strong><a href="./vdb-detail.html"><i class="fa fa-database fa-fw" aria-hidden="true"></i> JoinVDB</a></strong>
-                        <br>This VDB does a join of two sources</td>
-                    <td><i class="pficon pficon-storage-domain" aria-hidden="true"></i><strong> MyOracleDS<br><i class="pficon pficon-storage-domain" aria-hidden="true"></i> MyFileDS</strong></td>
+                <tr ng-repeat="vdb in m_vdbs">
+                    <td align="middle"><span ng-class="{ 'label label-success': vdb.status=='Active' , 'label label-warning': vdb.status=='Modified' , 'label label-info': vdb.status=='New' }">{{vdb.status}}</span></td>
+                    <td><strong><a href="./vdb-detail.html"><i class="fa fa-database fa-fw" aria-hidden="true"></i> {{vdb.name}}</a></strong>
+                        <br>{{vdb.description}}</td>
+                    <td><i class="pficon pficon-storage-domain" aria-hidden="true"></i><strong> {{vdb.datasources}}</strong></td>
                     <td><a href="./vdb-detail.html"><i class="fa fa-edit fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Edit VDB"></i></a><a href="./vdb-detail.html"><i class="fa fa-clone fa-fw" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Clone VDB"></i></a><a href="#"><i class="pficon pficon-export" style="color:black" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Export connection"></i></a><a href="#"><i class="fa fa-remove fa-fw" style="color:red" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Delete VDB"></i></a></td>
                 </tr>
             </table>
